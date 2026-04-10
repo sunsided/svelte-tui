@@ -23,7 +23,7 @@
     position: relative;
     cursor: pointer;
     color: white;
-    padding-left: 30px;
+    padding-left: 50px;
     user-select: none;
     font-family: "Lucida Console", monospace;
   }
@@ -40,11 +40,12 @@
   }
   :global(.tui-radio span) {
     position: absolute;
-    width: 10px;
-    height: 10px;
+    width: 30px;
+    height: 1em;
     cursor: pointer;
     top: 0px;
     left: 0px;
+    white-space: nowrap;
   }
   :global(.tui-radio input:checked ~ span::after) {
     content: "(•)";

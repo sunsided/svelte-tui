@@ -21,7 +21,7 @@
     position: relative;
     cursor: pointer;
     color: white;
-    padding-left: 30px;
+    padding-left: 50px;
     user-select: none;
     font-family: "Lucida Console", monospace;
     font-size: inherit;
@@ -39,11 +39,12 @@
   }
   :global(.tui-checkbox span) {
     position: absolute;
-    width: 10px;
-    height: 10px;
+    width: 30px;
+    height: 1em;
     cursor: pointer;
     top: 0px;
     left: 0px;
+    white-space: nowrap;
   }
   :global(.tui-checkbox input:checked ~ span::after) {
     content: "[√]";
