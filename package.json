@@ -1,5 +1,5 @@
 {
-  "name": "svelte-tui",
+  "name": "@sunsided/svelte-tui",
   "version": "0.0.1",
   "description": "Svelte 5 component library for retro MS-DOS / Turbo Vision aesthetic, built on TuiCss",
   "license": "MIT",
@@ -11,6 +11,10 @@
   },
   "bugs": {
     "url": "https://github.com/sunsided/svelte-tui/issues"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "restricted"
   },
   "keywords": [
     "svelte",
