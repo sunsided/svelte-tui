@@ -15,7 +15,7 @@
   class="tui-input"
   class:disabled
   {type}
-  {value}
+  bind:value
   {placeholder}
   {disabled}
   {onchange}
