@@ -1,0 +1,144 @@
+version: "3"
+
+tasks:
+  install:
+    desc: Install dependencies via npm ci
+    preconditions:
+      - sh: command -v npm
+        msg: npm is not installed or not in PATH
+    cmds:
+      - npm ci
+    generates:
+      - node_modules/.package-lock.json
+    sources:
+      - package.json
+      - package-lock.json
+
+  fmt:
+    desc: Format code with Prettier
+    aliases: [format]
+    deps: [install]
+    preconditions:
+      - sh: command -v npx
+        msg: npx is not installed or not in PATH
+    cmds:
+      - npx prettier --write .
+
+  lint:
+    desc: Run Prettier check and ESLint
+    deps: [install]
+    preconditions:
+      - sh: command -v npm
+        msg: npm is not installed or not in PATH
+    cmds:
+      - npm run lint
+
+  test:
+    desc: Run Vitest once
+    deps: [install]
+    preconditions:
+      - sh: command -v npx
+        msg: npx is not installed or not in PATH
+    cmds:
+      - npx vitest run
+
+  test:watch:
+    desc: Run Vitest in watch mode
+    deps: [install]
+    preconditions:
+      - sh: command -v npx
+        msg: npx is not installed or not in PATH
+    cmds:
+      - npx vitest
+
+  check:
+    desc: Type-check with svelte-check
+    deps: [install]
+    preconditions:
+      - sh: command -v npm
+        msg: npm is not installed or not in PATH
+    cmds:
+      - npm run check
+    sources:
+      - src/**/*.svelte
+      - src/**/*.ts
+      - tsconfig.json
+      - svelte.config.js
+    generates:
+      - .svelte-kit/types/**/*
+
+  build:
+    desc: Build library with Vite and package
+    deps: [install]
+    preconditions:
+      - sh: command -v npx
+        msg: npx is not installed or not in PATH
+    cmds:
+      - npx vite build
+      - task: package
+    sources:
+      - src/**/*.svelte
+      - src/**/*.ts
+      - src/**/*.css
+      - vite.config.ts
+      - svelte.config.js
+      - tsconfig.json
+      - package.json
+    generates:
+      - dist/**/*
+
+  package:
+    desc: Run svelte-package and publint
+    deps: [install]
+    preconditions:
+      - sh: command -v npm
+        msg: npm is not installed or not in PATH
+    cmds:
+      - npm run package
+    sources:
+      - src/**/*.svelte
+      - src/**/*.ts
+      - src/**/*.css
+      - svelte.config.js
+      - tsconfig.json
+      - package.json
+    generates:
+      - dist/**/*
+
+  dev:
+    desc: Start development server
+    deps: [install]
+    preconditions:
+      - sh: command -v npm
+        msg: npm is not installed or not in PATH
+    cmds:
+      - npm run dev
+
+  preview:
+    desc: Preview production build
+    deps: [install]
+    preconditions:
+      - sh: command -v npm
+        msg: npm is not installed or not in PATH
+    cmds:
+      - npm run preview
+
+  clean:all:
+    desc: Remove dist, .svelte-kit, and node_modules
+    aliases: [clean]
+    cmds:
+      - rm -rf dist .svelte-kit node_modules
+
+  clean:artifacts:
+    desc: Remove dist and .svelte-kit only
+    cmds:
+      - rm -rf dist .svelte-kit
+
+  ci:
+    desc: Run full CI pipeline (lint → check → test → build)
+    deps: [install]
+    cmds:
+      - task: lint
+      - task: check
+      - task: test
+      - task: build
