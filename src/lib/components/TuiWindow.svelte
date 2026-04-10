@@ -28,7 +28,7 @@
   {/if}
   {#if resizable}
     <button class="tui-fieldset-button tui-fieldset-button-left" type="button">↕</button>
-    <button class="tui-resize-handle" type="button"></button>
+    <button class="tui-resize-handle" type="button" tabindex="-1" aria-hidden="true"></button>
   {/if}
   {#if closable}
     <button class="tui-fieldset-button" onclick={onclose} type="button">■</button>
