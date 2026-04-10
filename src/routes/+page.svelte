@@ -28,6 +28,7 @@
 <div style="font-family: 'Lucida Console', monospace; font-size: 18px; background: black; color: white; min-height: 100vh; padding: 20px;">
   <h1 style="color: rgb(0, 255, 255);">svelte-tui Component Showcase</h1>
   <p><a href="/turbo-vision" style="color: rgb(0, 255, 255);">→ Turbo Vision Demo</a></p>
+  <p><a href="/startup" style="color: rgb(0, 255, 255);">→ BIOS / PC Startup Demo</a></p>
   
   <TuiTabs {tabs} bind:activeTab>
     {#snippet children(active)}
