@@ -128,10 +128,13 @@ All colors are driven by CSS custom properties defined in `theme.css`. Override 
 
 ## Development
 
+This project uses **Yarn** as its package manager. Prefer using task commands over direct `yarn` invocations when available.
+
 ```bash
-npm install
-npm run dev        # start showcase app on http://localhost:5173
-npm run build      # build library to dist/
-npm run check      # type-check with svelte-check
-npm run lint       # lint with ESLint + Prettier
+yarn install       # install dependencies
+yarn dev           # start showcase app on http://localhost:5173
+yarn build         # build library to dist/
+yarn check         # type-check with svelte-check
+yarn lint          # lint with ESLint + Prettier
+yarn test          # run component tests with Vitest
 ```
