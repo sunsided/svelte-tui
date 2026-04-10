@@ -1,6 +1,31 @@
 {
   "name": "svelte-tui",
   "version": "0.0.1",
+  "description": "Svelte 5 component library for retro MS-DOS / Turbo Vision aesthetic, built on TuiCss",
+  "license": "MIT",
+  "author": "Markus Mayer",
+  "homepage": "https://github.com/sunsided/svelte-tui",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sunsided/svelte-tui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sunsided/svelte-tui/issues"
+  },
+  "keywords": [
+    "svelte",
+    "svelte5",
+    "sveltekit",
+    "tui",
+    "tuicss",
+    "retro",
+    "dos",
+    "msdos",
+    "turbo-vision",
+    "terminal",
+    "component-library",
+    "ui"
+  ],
   "scripts": {
     "dev": "vite dev",
     "build": "vite build && npm run package",
