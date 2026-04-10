@@ -28,7 +28,7 @@
   {/if}
   {#if resizable}
     <button class="tui-fieldset-button tui-fieldset-button-left" type="button">↕</button>
-    <button class="tui-resize-handle" type="button">◢</button>
+    <button class="tui-resize-handle" type="button"></button>
   {/if}
   {#if closable}
     <button class="tui-fieldset-button" onclick={onclose} type="button">■</button>
@@ -133,20 +133,17 @@
     position: absolute;
     bottom: 0;
     right: 0;
-    color: white;
-    background-color: var(--tui-window-bg, rgb(0, 0, 168));
+    width: 24px;
+    height: 24px;
+    background-color: transparent;
     z-index: 2;
     border: none;
     cursor: nwse-resize;
     outline: 0;
-    padding: 0 4px;
+    padding: 0;
     user-select: none;
-    font-family: inherit;
-    font-size: inherit;
-    transform: translate(50%, 50%);
-    line-height: 1;
   }
   :global(.tui-resize-handle:active) {
-    color: rgb(0, 255, 255) !important;
+    background-color: transparent;
   }
 </style>
