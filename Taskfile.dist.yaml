@@ -14,13 +14,23 @@ tasks:
     sources:
       - package.json
 
+  update:
+    desc: Run yarn upgrade
+    preconditions:
+      - sh: command -v yarn
+        msg: yarn is not installed or not in PATH
+    cmds:
+      - yarn upgrade
+
   upgrade:
     desc: Run yarn interactive upgrade
+    interactive: true
     preconditions:
       - sh: command -v yarn
         msg: yarn is not installed or not in PATH
     cmds:
       - yarn upgrade-interactive
+      - task: update
 
   fmt:
     desc: Format code with Prettier
