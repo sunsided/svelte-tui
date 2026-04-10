@@ -44,6 +44,15 @@
   --tui-sidenav-bg: rgb(0, 168, 168);
 }
 
+/* ── CSS reset ───────────────────────────────────────────────────────────────
+   Match the TuiCss baseline: remove the browser's default body margin so
+   fixed nav/status bars and full-width desktop divs sit flush to all edges.
+   ──────────────────────────────────────────────────────────────────────────── */
+body {
+  margin: 0;
+  padding: 0;
+}
+
 /* ── Desktop background utility classes ─────────────────────────────────────
    Each class tiles a 4×4 CSS radial-gradient dot pattern over a solid base
    colour, replicating the classic TuiCss tui-bg-* look without external PNGs.

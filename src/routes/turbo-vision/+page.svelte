@@ -194,13 +194,6 @@
     box-sizing: border-box;
   }
 
-  /* Remove the browser's default 8px body margin so the desktop fills
-     the full viewport edge-to-edge, matching the fixed nav/status bar. */
-  :global(body) {
-    margin: 0;
-    padding: 0;
-  }
-
   .tv-content {
     padding: 38px 0 28px;
   }
