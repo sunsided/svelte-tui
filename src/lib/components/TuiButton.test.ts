@@ -1,6 +1,5 @@
 import { describe, it, expect, vi } from "vitest";
 import { render, screen } from "@testing-library/svelte";
-import TuiButton from "./TuiButton.svelte";
 import TuiButtonTest from "./TuiButton.test.svelte";
 
 describe("TuiButton", () => {
