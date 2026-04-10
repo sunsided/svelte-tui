@@ -31,7 +31,9 @@
     outline: none;
     font-family: "Lucida Console", monospace;
     font-size: inherit;
-    resize: vertical;
+    resize: none;
+    width: 100%;
+    box-sizing: border-box;
   }
   :global(.tui-textarea.disabled) {
     background-color: rgb(168, 168, 168);

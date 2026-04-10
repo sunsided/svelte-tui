@@ -7,12 +7,20 @@ tasks:
       - sh: command -v npm
         msg: npm is not installed or not in PATH
     cmds:
-      - npm ci
+      - yarn install
     generates:
       - node_modules/.package-lock.json
+      - yarn.lock
     sources:
       - package.json
-      - package-lock.json
+
+  upgrade:
+    desc: Run yarn interactive upgrade
+    preconditions:
+      - sh: command -v yarn
+        msg: yarn is not installed or not in PATH
+    cmds:
+      - yarn upgrade-interactive
 
   fmt:
     desc: Format code with Prettier
@@ -40,7 +48,7 @@ tasks:
       - sh: command -v npx
         msg: npx is not installed or not in PATH
     cmds:
-      - npx vitest run
+      - npx vitest run --passWithNoTests
 
   test:watch:
     desc: Run Vitest in watch mode

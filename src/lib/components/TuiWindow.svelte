@@ -28,6 +28,7 @@
   {/if}
   {#if resizable}
     <button class="tui-fieldset-button tui-fieldset-button-left" type="button">↕</button>
+    <button class="tui-resize-handle" type="button" tabindex="-1" aria-hidden="true"></button>
   {/if}
   {#if closable}
     <button class="tui-fieldset-button" onclick={onclose} type="button">■</button>
@@ -126,5 +127,23 @@
   :global(.tui-fieldset-text-top) {
     top: 0px;
     bottom: initial;
+  }
+  /* Resize handle positioned at bottom-right corner */
+  :global(.tui-resize-handle) {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 24px;
+    height: 24px;
+    background-color: transparent;
+    z-index: 2;
+    border: none;
+    cursor: nwse-resize;
+    outline: 0;
+    padding: 0;
+    user-select: none;
+  }
+  :global(.tui-resize-handle:active) {
+    background-color: transparent;
   }
 </style>
