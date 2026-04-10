@@ -130,6 +130,37 @@
 
   </div>
 
+  <!-- Background variation showcase -->
+  <div class="tv-bg-showcase">
+    <div class="tv-bg-label">Background variations</div>
+    <div class="tv-bg-samples">
+      <!-- Solid teal (current default) -->
+      <div class="tv-bg-sample" style="background-color: rgb(0, 168, 168);">
+        <TuiWindow title="Teal solid">
+          <p>Default desktop</p>
+        </TuiWindow>
+      </div>
+      <!-- Blue-black dotted -->
+      <div class="tv-bg-sample tui-bg-blue-black">
+        <TuiWindow title="Blue · black">
+          <p>Blue-black dots</p>
+        </TuiWindow>
+      </div>
+      <!-- Cyan-black dotted -->
+      <div class="tv-bg-sample tui-bg-cyan-black">
+        <TuiWindow title="Cyan · black">
+          <p>Cyan-black dots</p>
+        </TuiWindow>
+      </div>
+      <!-- Green-black dotted -->
+      <div class="tv-bg-sample tui-bg-green-black">
+        <TuiWindow title="Green · black">
+          <p>Green-black dots</p>
+        </TuiWindow>
+      </div>
+    </div>
+  </div>
+
   <!-- Modal dialog -->
   <TuiModal bind:open={modalOpen} title="Search Result">
     <p>No more occurrences of</p>
@@ -161,6 +192,13 @@
     font-size: 18px;
     color: white;
     box-sizing: border-box;
+  }
+
+  /* Remove the browser's default 8px body margin so the desktop fills
+     the full viewport edge-to-edge, matching the fixed nav/status bar. */
+  :global(body) {
+    margin: 0;
+    padding: 0;
   }
 
   .tv-content {
@@ -207,5 +245,31 @@
   :global(.tv-hamburger:hover) {
     background-color: rgb(0, 168, 0);
     color: black;
+  }
+
+  .tv-bg-showcase {
+    padding: 20px 10px 80px;
+    border-top: 2px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .tv-bg-label {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+    padding-left: 4px;
+  }
+
+  .tv-bg-samples {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .tv-bg-sample {
+    padding: 20px;
+    min-width: 220px;
   }
 </style>

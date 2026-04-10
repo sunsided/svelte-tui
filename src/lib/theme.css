@@ -43,3 +43,39 @@
   /* SideNav */
   --tui-sidenav-bg: rgb(0, 168, 168);
 }
+
+/* ── Desktop background utility classes ─────────────────────────────────────
+   Each class tiles a 4×4 CSS radial-gradient dot pattern over a solid base
+   colour, replicating the classic TuiCss tui-bg-* look without external PNGs.
+   ──────────────────────────────────────────────────────────────────────────── */
+
+.tui-bg-blue-black {
+  background-color: rgb(0, 0, 168);
+  background-image: radial-gradient(circle, #000 1px, transparent 1px);
+  background-size: 4px 4px;
+}
+.tui-bg-blue-white {
+  background-color: rgb(0, 0, 168);
+  background-image: radial-gradient(circle, #fff 1px, transparent 1px);
+  background-size: 4px 4px;
+}
+.tui-bg-cyan-black {
+  background-color: rgb(0, 168, 168);
+  background-image: radial-gradient(circle, #000 1px, transparent 1px);
+  background-size: 4px 4px;
+}
+.tui-bg-cyan-white {
+  background-color: rgb(0, 168, 168);
+  background-image: radial-gradient(circle, #fff 1px, transparent 1px);
+  background-size: 4px 4px;
+}
+.tui-bg-green-black {
+  background-color: rgb(0, 168, 0);
+  background-image: radial-gradient(circle, #000 1px, transparent 1px);
+  background-size: 4px 4px;
+}
+.tui-bg-green-white {
+  background-color: rgb(0, 168, 0);
+  background-image: radial-gradient(circle, #fff 1px, transparent 1px);
+  background-size: 4px 4px;
+}
