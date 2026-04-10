@@ -40,7 +40,7 @@ tasks:
       - sh: command -v npx
         msg: npx is not installed or not in PATH
     cmds:
-      - npx vitest run
+      - npx vitest run --passWithNoTests
 
   test:watch:
     desc: Run Vitest in watch mode
