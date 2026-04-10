@@ -23,30 +23,25 @@
 </script>
 
 <div class="tui-window" class:tui-full-width={fullWidth} class:tui-no-shadow={noShadow}>
-  <fieldset class="tui-fieldset">
-    {#if title}
-      <legend class="tui-legend-center">{title}</legend>
-    {/if}
-    {#if closable}
-      <button class="tui-fieldset-button" onclick={onclose} type="button">
-        <span>■</span>
-      </button>
-    {/if}
-    {#if resizable}
-      <button class="tui-fieldset-button tui-fieldset-button-left" type="button">
-        <span>↕</span>
-      </button>
-    {/if}
-    <div class="tui-window-content">
-      {@render children()}
-    </div>
-  </fieldset>
+  {#if title}
+    <div class="tui-window-title"><span>{title}</span></div>
+  {/if}
+  {#if resizable}
+    <button class="tui-fieldset-button tui-fieldset-button-left" type="button">↕</button>
+  {/if}
+  {#if closable}
+    <button class="tui-fieldset-button" onclick={onclose} type="button">■</button>
+  {/if}
+  <div class="tui-window-content">
+    {@render children()}
+  </div>
 </div>
 
 <style>
   :global(.tui-window) {
     background-color: var(--tui-window-bg, rgb(0, 0, 168));
-    padding: 1px;
+    border: 6px white double;
+    padding: 12px;
     display: inline-block;
     position: relative;
     box-shadow: 10px 10px black;
@@ -62,36 +57,45 @@
   :global(.tui-window.tui-no-shadow) {
     box-shadow: none !important;
   }
-  :global(.tui-window .tui-fieldset) {
-    border: 6px white double;
-    padding: 12px;
-    background-color: inherit;
-    margin: 0;
-  }
-  :global(.tui-window .tui-fieldset legend) {
-    color: white;
-  }
-  :global(.tui-window .tui-legend-center) {
+  /* Title sits on the top border line — the span background creates a gap only
+     where the text is, so the rest of the top border remains fully visible. */
+  :global(.tui-window-title) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
     text-align: center;
-    width: 100%;
+    transform: translateY(-50%);
+    line-height: 1;
+    user-select: none;
+    pointer-events: none;
+  }
+  :global(.tui-window-title span) {
+    background-color: var(--tui-window-bg, rgb(0, 0, 168));
+    padding: 0 6px;
+    display: inline-block;
+    line-height: 1.4;
   }
   :global(.tui-window-content) {
     padding: 4px 0;
   }
+  /* Close / resize corner buttons – same top-border alignment as the title */
   :global(.tui-fieldset-button) {
     position: absolute;
-    top: 0px;
-    right: 16px;
+    top: 0;
+    right: 8px;
     color: white;
-    background-color: inherit;
+    background-color: var(--tui-window-bg, rgb(0, 0, 168));
     z-index: 2;
     border: none;
     cursor: pointer;
     outline: 0;
-    padding: 2px;
+    padding: 0 2px;
     user-select: none;
     font-family: inherit;
     font-size: inherit;
+    transform: translateY(-50%);
+    line-height: 1.4;
   }
   :global(.tui-fieldset-button::before) {
     content: "[";
@@ -104,14 +108,14 @@
   }
   :global(.tui-fieldset-button-left) {
     right: initial !important;
-    left: 16px !important;
+    left: 8px !important;
   }
   :global(.tui-fieldset-text) {
     position: absolute;
     bottom: 0px;
     left: 16px;
     color: white;
-    background-color: inherit;
+    background-color: var(--tui-window-bg, rgb(0, 0, 168));
     z-index: 2;
     padding: 2px;
   }
