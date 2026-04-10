@@ -1,7 +1,7 @@
 :root {
   --tui-font: "Lucida Console", monospace;
   --tui-font-size: 18px;
-  
+
   /* Colors */
   --tui-color-primary: rgb(0, 0, 168);
   --tui-color-secondary: rgb(168, 168, 168);
@@ -9,37 +9,82 @@
   --tui-color-danger: rgb(168, 0, 0);
   --tui-color-warning: rgb(168, 168, 0);
   --tui-color-info: rgb(0, 168, 168);
-  
+
   /* Button */
   --tui-button-bg: rgb(0, 168, 0);
   --tui-button-color: black;
   --tui-button-active-bg: rgb(0, 168, 168);
-  
+
   /* Window/Panel */
   --tui-window-bg: rgb(0, 0, 168);
   --tui-panel-bg: rgb(0, 0, 168);
-  
+
   /* Input */
   --tui-input-bg: rgb(0, 0, 0);
   --tui-input-color: white;
   --tui-input-focus-bg: rgb(255, 255, 0);
-  
+
   /* Textarea */
   --tui-textarea-color: rgb(255, 255, 0);
-  
+
   /* Progress */
   --tui-progress-track-bg: rgb(0, 168, 168);
   --tui-progress-bg: rgb(0, 255, 255);
-  
+
   /* Nav */
   --tui-nav-bg: rgb(168, 168, 168);
-  
+
   /* StatusBar */
   --tui-statusbar-bg: rgb(168, 168, 168);
-  
+
   /* Tabs */
   --tui-tabs-bg: rgb(0, 0, 168);
-  
+
   /* SideNav */
   --tui-sidenav-bg: rgb(0, 168, 168);
+}
+
+/* ── CSS reset ───────────────────────────────────────────────────────────────
+   Match the TuiCss baseline: remove the browser's default body margin so
+   fixed nav/status bars and full-width desktop divs sit flush to all edges.
+   ──────────────────────────────────────────────────────────────────────────── */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Desktop background utility classes ─────────────────────────────────────
+   Each class tiles a 4×4 CSS radial-gradient dot pattern over a solid base
+   colour, replicating the classic TuiCss tui-bg-* look without external PNGs.
+   ──────────────────────────────────────────────────────────────────────────── */
+
+.tui-bg-blue-black {
+  background-color: rgb(0, 0, 168);
+  background-image: radial-gradient(circle, #000 1px, transparent 1px);
+  background-size: 4px 4px;
+}
+.tui-bg-blue-white {
+  background-color: rgb(0, 0, 168);
+  background-image: radial-gradient(circle, #fff 1px, transparent 1px);
+  background-size: 4px 4px;
+}
+.tui-bg-cyan-black {
+  background-color: rgb(0, 168, 168);
+  background-image: radial-gradient(circle, #000 1px, transparent 1px);
+  background-size: 4px 4px;
+}
+.tui-bg-cyan-white {
+  background-color: rgb(0, 168, 168);
+  background-image: radial-gradient(circle, #fff 1px, transparent 1px);
+  background-size: 4px 4px;
+}
+.tui-bg-green-black {
+  background-color: rgb(0, 168, 0);
+  background-image: radial-gradient(circle, #000 1px, transparent 1px);
+  background-size: 4px 4px;
+}
+.tui-bg-green-white {
+  background-color: rgb(0, 168, 0);
+  background-image: radial-gradient(circle, #fff 1px, transparent 1px);
+  background-size: 4px 4px;
 }
