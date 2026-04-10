@@ -1,7 +1,7 @@
 :root {
   --tui-font: "Lucida Console", monospace;
   --tui-font-size: 18px;
-  
+
   /* Colors */
   --tui-color-primary: rgb(0, 0, 168);
   --tui-color-secondary: rgb(168, 168, 168);
@@ -9,37 +9,37 @@
   --tui-color-danger: rgb(168, 0, 0);
   --tui-color-warning: rgb(168, 168, 0);
   --tui-color-info: rgb(0, 168, 168);
-  
+
   /* Button */
   --tui-button-bg: rgb(0, 168, 0);
   --tui-button-color: black;
   --tui-button-active-bg: rgb(0, 168, 168);
-  
+
   /* Window/Panel */
   --tui-window-bg: rgb(0, 0, 168);
   --tui-panel-bg: rgb(0, 0, 168);
-  
+
   /* Input */
   --tui-input-bg: rgb(0, 0, 0);
   --tui-input-color: white;
   --tui-input-focus-bg: rgb(255, 255, 0);
-  
+
   /* Textarea */
   --tui-textarea-color: rgb(255, 255, 0);
-  
+
   /* Progress */
   --tui-progress-track-bg: rgb(0, 168, 168);
   --tui-progress-bg: rgb(0, 255, 255);
-  
+
   /* Nav */
   --tui-nav-bg: rgb(168, 168, 168);
-  
+
   /* StatusBar */
   --tui-statusbar-bg: rgb(168, 168, 168);
-  
+
   /* Tabs */
   --tui-tabs-bg: rgb(0, 0, 168);
-  
+
   /* SideNav */
   --tui-sidenav-bg: rgb(0, 168, 168);
 }

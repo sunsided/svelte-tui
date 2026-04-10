@@ -1,10 +1,10 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
-  
+
   interface Props {
     children: Snippet;
   }
-  
+
   let { children }: Props = $props();
 </script>
 
@@ -45,5 +45,14 @@
     user-select: none;
     color: inherit;
     text-decoration: none;
+  }
+  :global(.tui-statusbar-divider) {
+    border-right: 2px black solid;
+    display: inline;
+    margin: 0px 3px;
+  }
+  :global(.tui-shortcut) {
+    float: right;
+    margin-left: 16px;
   }
 </style>

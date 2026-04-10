@@ -7,7 +7,7 @@
     children: Snippet;
   }
   
-  let { open = false, right = false, children }: Props = $props();
+  let { open = $bindable(false), right = false, children }: Props = $props();
 </script>
 
 <div class="tui-sidenav" class:active={open} class:right>
